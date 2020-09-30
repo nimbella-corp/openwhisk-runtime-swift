@@ -38,6 +38,10 @@ RUN rm -rf /var/lib/apt/lists/* && apt-get clean && apt-get update \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& locale-gen en_US.UTF-8
 
+# Add nim
+RUN  apt-get -y install curl
+ && curl https://preview-apigcp.nimbella.io/remoteBuild/nim-install-linux.sh | bash
+
 ENV LANG="en_US.UTF-8" \
 	LANGUAGE="en_US:en" \
 	LC_ALL="en_US.UTF-8"
