@@ -55,6 +55,7 @@ COPY --from=builder_release /bin/proxy /bin/proxy_release
 RUN mv /bin/proxy_${GO_PROXY_BUILD_FROM} /bin/proxy
 ADD swiftbuild.py /bin/compile
 ADD swiftbuild.py.launcher.swift /bin/compile.launcher.swift
+ADD defaultBuild /bin/defaultBuild
 COPY _Whisk.swift /swiftAction/Sources/
 COPY Package.swift /swiftAction/
 COPY buildandrecord.py /swiftAction/
